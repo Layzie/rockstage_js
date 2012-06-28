@@ -3,8 +3,8 @@ buster.testCase('RockstageTest', {
     localStorage.clear();
     sessionStorage.clear();
   },
-  'put() should be equal storage.setItem()': function() {
+  'put() should be equal storage.getItem()': function() {
     RS.put({foo: 'bar'});
-    assert.equals(RS.get('foo'), JSON.parse(localStorage.getItem('foo')));
+    assert.equals('bar', JSON.parse(localStorage.getItem('foo')));
   }
 });
