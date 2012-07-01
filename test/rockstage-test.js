@@ -11,5 +11,12 @@ buster.testCase('RockstageTest', {
     localStorage.setItem('foo', JSON.stringify('bar'));
 
     assert.equals('bar', RS.get('foo'));
+  },
+  'remove() should be clear storage': function()  {
+    RS.put({foo: 'bar'});
+
+    RS.remove('foo');
+
+    refute.isFalse(JSON.parse(localStorage.getItem('foo')));
   }
 });
