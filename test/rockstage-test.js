@@ -4,19 +4,27 @@ buster.testCase('RockstageTest', {
     sessionStorage.clear();
   },
   'put() should be equal storage.getItem()': function() {
-    RS.put({foo: 'bar'});
-    assert.equals('bar', JSON.parse(localStorage.getItem('foo')));
+    RS.put({foo: 'hoge', bar: 'fuga', baz: 'hogera'});
+
+    assert.equals('hoge', JSON.parse(localStorage.getItem('foo')));
+    assert.equals('fuga', JSON.parse(localStorage.getItem('bar')));
+    assert.equals('hogera', JSON.parse(localStorage.getItem('baz')));
   },
   'get() should be equal storage.setItem()': function() {
-    localStorage.setItem('foo', JSON.stringify('bar'));
+    localStorage.setItem('foo', JSON.stringify('hoge'));
 
-    assert.equals('bar', RS.get('foo'));
+    assert.equals('hoge', RS.get('foo'));
   },
   'remove() should be clear storage': function()  {
-    RS.put({foo: 'bar'});
-
+    RS.put({foo: 'hoge', bar: 'fuga', baz: 'hogera'});
     RS.remove('foo');
 
     refute.isFalse(JSON.parse(localStorage.getItem('foo')));
+  },
+  'clear() sould be clear all storage': function() {
+    RS.put({foo: 'hoge', bar: 'fuga', baz: 'hogera'});
+    RS.clear();
+
+    refute.isNull(localStorage);
   }
 });
