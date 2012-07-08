@@ -4,7 +4,7 @@
 
 This library for easier using 'localStorage' & 'sessionStorage'.
 
-See https://layzie.github.com/rockstage_js
+See http://layzie.github.com/rockstage_js
 
 ## General usage
 This script use no library yet. So add script tags in html when using it.
@@ -89,7 +89,7 @@ This library tests below browsers.
 - Firefox 12.0, OS X 10.7 (Lion)
 - Opera 12.00, OS X 10.7 (Lion)
 
-Maybe other browser can be used localStorage. But I don't test these browsers.
+Maybe other browser can be used. But I don't test these browsers.
 
 ## Problem?
 
