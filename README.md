@@ -2,7 +2,7 @@
 
 [![Build Status](https://secure.travis-ci.org/Layzie/rockstage_js.png?branch=master)](http://travis-ci.org/Layzie/rockstage_js)
 
-This library for easier using 'localStorage' & 'sessionStorage'.
+This library for easier using 'localStorage' &amp; 'sessionStorage'.
 
 See http://layzie.github.com/rockstage_js
 
