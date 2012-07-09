@@ -26,5 +26,11 @@ buster.testCase('RockstageTest', {
     RS.clear();
 
     refute.isNull(localStorage);
+  },
+  'is() should be returned true in storage & should be returned false in no storage': function() {
+    RS.put({foo: 'hoge', bar: 'fuga', baz: 'hogera'});
+
+    assert.isTrue(RS.is('foo'));
+    assert.isFalse(RS.is('storage'));
   }
 });
