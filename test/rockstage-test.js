@@ -31,6 +31,8 @@ buster.testCase('RockstageTest', {
     RS.put({foo: 'hoge', bar: 'fuga', baz: 'hogera'});
 
     assert.isTrue(RS.is('foo'));
+    assert.isTrue(RS.is('bar'));
+    assert.isTrue(RS.is('baz'));
     assert.isFalse(RS.is('storage'));
   }
 });
