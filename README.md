@@ -80,6 +80,23 @@ ex:
 RS.clear(true) // Clear all items from localStorage
 ```
 
+### Check existence of items from storage
+
+`RS.is(key, flag)`
+- `key` is keyword of want to check in `localStorage` or `sessionStorage`.
+- `flag` is flag to selecting `localStorage` or `sessionStorage`.
+
+When check existence of item in storage using `RS.is()`. This method arguments is 2.
+One is string of want to check from storage. Last is chose `localStorage` or `sessionStorage` flag.
+
+This argument default value is `true`. This is `localStorage`. Set to `false` when using
+`sessionStorage`.
+
+ex:
+```javascript
+RS.is('hoge', true) // Check 'hoge' in localStorage
+```
+
 ## Test enviroments
 
 This library tests below browsers.
