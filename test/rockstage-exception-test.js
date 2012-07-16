@@ -32,5 +32,21 @@ buster.testCase('RockstageExceptionTest', {
     assert.exception(function() {
       RS.get(true);
     });
+  },
+  'RS.is() should be throw error if 1st argument isn\'t String': function() {
+    RS.put({foo: 'hoge', bar: 'fuga', baz: 'hogera'});
+
+    assert.exception(function() {
+      RS.is(['hoge']);
+    });
+    assert.exception(function() {
+    RS.is({foo: hoge});
+    });
+    assert.exception(function() {
+      RS.is(7);
+    });
+    assert.exception(function() {
+      RS.is(true);
+    });
   }
 });
