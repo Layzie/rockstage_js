@@ -24,7 +24,7 @@ buster.testCase('RockstageExceptionTest', {
       RS.get(['hoge']);
     });
     assert.exception(function() {
-    RS.get({foo: hoge});
+      RS.get({foo: hoge});
     });
     assert.exception(function() {
       RS.get(7);
@@ -40,7 +40,7 @@ buster.testCase('RockstageExceptionTest', {
       RS.is(['hoge']);
     });
     assert.exception(function() {
-    RS.is({foo: hoge});
+      RS.is({foo: hoge});
     });
     assert.exception(function() {
       RS.is(7);
