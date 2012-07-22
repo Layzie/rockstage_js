@@ -3,6 +3,14 @@ buster.testCase('RockstageTest', {
     localStorage.clear();
     sessionStorage.clear();
   },
+  'RS should be initialized when call script': function() {
+    assert.isObject(window.RS);
+    assert.isFunction(RS.put);
+    assert.isFunction(RS.get);
+    assert.isFunction(RS.remove);
+    assert.isFunction(RS.clear);
+    assert.isFunction(RS.is);
+  },
   'put() should be equal storage.getItem()': function() {
     RS.put({foo: 'hoge', bar: 'fuga', baz: 'hogera'});
 

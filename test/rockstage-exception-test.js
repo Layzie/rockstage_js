@@ -3,6 +3,11 @@ buster.testCase('RockstageExceptionTest', {
     localStorage.clear();
     sessionStorage.clear();
   },
+  'RS should be called when browser have storage': function() {
+    refute.exception(function() {
+      window.RS;
+    });
+  },
   'RS.put() should be throw error if 1st argument isn\'t Object': function() {
     assert.exception(function() {
       RS.put('hoge');
