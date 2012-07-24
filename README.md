@@ -45,7 +45,7 @@ One is string get to storage. Last is chose `localStorage` or `sessionStorage` f
 
 ex:
 ```javascript
-RS.put('foo', true); // return 'hoge'
+RS.get('foo', true); // return 'hoge'
 ```
 ### Remove item from storage
 
