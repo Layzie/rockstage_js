@@ -10,7 +10,7 @@
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <title>Rockstage.js by Layzie</title>
+    <title>{{ page.title }}</title>
   </head>
 
   <body>
@@ -31,192 +31,14 @@
         <hr>
 
         <section id="main_content">
-          <h1>Rockstage.js</h1>
-
-<p><a href="http://travis-ci.org/Layzie/rockstage_js"><img src="https://secure.travis-ci.org/Layzie/rockstage_js.png?branch=master" alt="Build Status"></a></p>
-
-<p>This library for easier using 'localStorage' &amp; 'sessionStorage'.</p>
-
-<p>See <a href="http://layzie.github.com/rockstage_js">http://layzie.github.com/rockstage_js</a></p>
-
-<h2>General usage</h2>
-
-<p>This script use no library yet. So add script tags in html when using it.</p>
-
-<p><code>&lt;script src="/your/path/rockstage.js" type="text/javascrpt" charset="utf-8"&gt;&lt;/script&gt;</code></p>
-
-<h3>Set items to storage</h3>
-
-<p><code>RS.put(object, flag)</code></p>
-
-<ul>
-<li>
-<code>object</code> is value of setting to storage.</li>
-<li>
-<code>flag</code> is flag to selecting <code>localStorage</code> or <code>sessionStorage</code>.</li>
-</ul><p>When set items to storage using <code>RS.put()</code>. This method arguments is 2.
-One is object set to storage. Last is chose <code>localStorage</code> or <code>sessionStorage</code> flag.</p>
-
-<p>2nd argument default value is <code>true</code>. This is <code>localStorage</code>. Set to <code>false</code> when using
-<code>sessionStorage</code>.</p>
-
-<p>ex:</p>
-
-<div class="highlight">
-<pre><span class="nx">RS</span><span class="p">.</span><span class="nx">put</span><span class="p">({</span>
-  <span class="nx">foo</span><span class="o">:</span> <span class="s1">'hoge'</span><span class="p">,</span>
-  <span class="nx">bar</span><span class="o">:</span> <span class="s1">'fuga'</span><span class="p">,</span>
-  <span class="nx">baz</span><span class="o">:</span> <span class="s1">'hogera'</span>
-<span class="p">},</span> <span class="kc">true</span><span class="p">);</span>
-</pre>
-</div>
-
-
-<h3>Get item from storage</h3>
-
-<p><code>RS.get('value', flag)</code></p>
-
-<ul>
-<li>
-<code>value</code> is string of want to get storage.</li>
-<li>
-<code>flag</code> is flag to selecting <code>localStorage</code> or <code>sessionStorage</code>.</li>
-</ul><p>When get item from storage using <code>RS.get()</code>. This method arguments is 2.
-One is string get to storage. Last is chose <code>localStorage</code> or <code>sessionStorage</code> flag.</p>
-
-<p>2nd argument default value is <code>true</code>. This is <code>localStorage</code>. Set to <code>false</code> when using
-<code>sessionStorage</code>.</p>
-
-<p>ex:</p>
-
-<div class="highlight">
-<pre><span class="nx">RS</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'foo'</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span> <span class="c1">// return 'hoge'</span>
-</pre>
-</div>
-
-
-<h3>Remove item from storage</h3>
-
-<p><code>RS.remove('value', flag)</code></p>
-
-<ul>
-<li>
-<code>value</code> is string of want to remove storage.</li>
-<li>
-<code>flag</code> is flag to selecting <code>localStorage</code> or <code>sessionStorage</code>.</li>
-</ul><p>When remove item from storage using <code>RS.remove()</code>. This method arguments is 2.
-One is string remove from storage. Last is chose <code>localStorage</code> or <code>sessionStorage</code> flag.</p>
-
-<p>2nd argument default value is <code>true</code>. This is <code>localStorage</code>. Set to <code>false</code> when using
-<code>sessionStorage</code>.</p>
-
-<p>ex:</p>
-
-<div class="highlight">
-<pre><span class="nx">RS</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="s1">'foo'</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span> <span class="c1">// remove 'foo' from localStorage</span>
-</pre>
-</div>
-
-
-<h3>Clear all items from storage</h3>
-
-<p><code>RS.clear(flag)</code></p>
-
-<ul>
-<li>
-<code>flag</code> is flag to selecting <code>localStorage</code> or <code>sessionStorage</code>.</li>
-</ul><p>When clear all items from storage using <code>RS.flag()</code>. This method arguments is only 1.
-This flag is chose <code>localStorage</code> or <code>sessionStorage</code> flag.</p>
-
-<p>This argument default value is <code>true</code>. This is <code>localStorage</code>. Set to <code>false</code> when using
-<code>sessionStorage</code>.</p>
-
-<p>ex:</p>
-
-<div class="highlight">
-<pre><span class="nx">RS</span><span class="p">.</span><span class="nx">clear</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="c1">// Clear all items from localStorage</span>
-</pre>
-</div>
-
-
-<h3>Check existence of items from storage</h3>
-
-<p><code>RS.is(key, flag)</code></p>
-
-<ul>
-<li>
-<code>key</code> is keyword of want to check in <code>localStorage</code> or <code>sessionStorage</code>.</li>
-<li>
-<code>flag</code> is flag to selecting <code>localStorage</code> or <code>sessionStorage</code>.</li>
-</ul><p>When check existence of item in storage using <code>RS.is()</code>. This method arguments is 2.
-One is string of want to check from storage. Last is chose <code>localStorage</code> or <code>sessionStorage</code> flag.</p>
-
-<p>This argument default value is <code>true</code>. This is <code>localStorage</code>. Set to <code>false</code> when using
-<code>sessionStorage</code>.</p>
-
-<p>ex:</p>
-
-<div class="highlight">
-<pre><span class="nx">RS</span><span class="p">.</span><span class="nx">is</span><span class="p">(</span><span class="s1">'hoge'</span><span class="p">,</span> <span class="kc">true</span><span class="p">)</span> <span class="c1">// Check 'hoge' in localStorage</span>
-</pre>
-</div>
-
-
-<h2>Test enviroments</h2>
-
-<p>This library tests below browsers.</p>
-
-<ul>
-<li>Chrome 20.0.1132.47, OS X 10.7 (Lion)</li>
-<li>Safari 5.1.7, OS X 10.7 (Lion)</li>
-<li>Firefox 12.0, OS X 10.7 (Lion)</li>
-<li>Opera 12.00, OS X 10.7 (Lion)</li>
-</ul><p>Maybe other browser can be used. But I don't test these browsers.</p>
-
-<h2>Problem?</h2>
-
-<p>Please report <a href="https://github.com/Layzie/rockstage_js/issues">issues</a>.</p>
-
-<h2>Licence</h2>
-
-<p>Copyright (c) 2012 HIRAKI Satoru, <a href="https://github.com/Layzie">https://github.com/Layzie</a></p>
-
-<p>Permission is hereby granted, free of charge, to any person obtaining
-a copy of this software and associated documentation files (the
-"Software"), to deal in the Software without restriction, including
-without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Software, and to
-permit persons to whom the Software is furnished to do so, subject to
-the following conditions:</p>
-
-<p>The above copyright notice and this permission notice shall be
-included in all copies or substantial portions of the Software.</p>
-
-<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
-LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
-OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
-WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+          {{ content }}
         </section>
 
         <footer>
           Rockstage.js is maintained by <a href="https://github.com/Layzie">Layzie</a><br>
           This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.
         </footer>
-
-                  <script type="text/javascript">
-            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-          </script>
-          <script type="text/javascript">
-            try {
-              var pageTracker = _gat._getTracker("UA-2997830-3");
-            pageTracker._trackPageview();
-            } catch(err) {}
-          </script>
-
+        {% include ga.html %}
       </div>
     </div>
   </body>
