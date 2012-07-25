@@ -9,8 +9,6 @@ title: Rockstage.js by Layzie
 
 This library for easier using 'localStorage' &amp; 'sessionStorage'.
 
-See http://layzie.github.com/rockstage_js
-
 ## General usage
 This script use no library yet. So add script tags in html when using it.
 
