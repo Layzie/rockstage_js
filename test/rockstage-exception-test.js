@@ -3,6 +3,31 @@ buster.testCase('RockstageExceptionTest', {
     localStorage.clear();
     sessionStorage.clear();
   },
+  'RS should be return message of error called method when 2nd argument isn\'t Boolean or undefined': function() {
+    try {
+      RS.put({foo: 'hoge', bar: 'fuga'}, 'baz');
+    } catch(e) {
+      assert.same(e.message, 'RS.put(): 2nd argument should be boolean');
+    }
+
+    try {
+      RS.get('foo', 2);
+    } catch(e) {
+      assert.same(e.message, 'RS.get(): 2nd argument should be boolean');
+    }
+
+    try {
+      RS.remove('foo', /abc/i);
+    } catch(e) {
+      assert.same(e.message, 'RS.remove(): 2nd argument should be boolean');
+    }
+
+    try {
+      RS.clear(function() {});
+    } catch(e) {
+      assert.same(e.message, 'RS.clear(): 2nd argument should be boolean');
+    }
+  },
   'RS should be called when browser have storage': function() {
     refute.exception(function() {
       window.RS;
