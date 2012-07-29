@@ -22,7 +22,7 @@
 /**
  * @fileOverView The library of 'localStorage' and 'sessionStorage'
  * @author HIRAKI Satoru@Layzie
- * @version 0.0.2
+ * @version 0.0.3
  */
 
 (function(window, undefined) {
