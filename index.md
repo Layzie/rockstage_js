@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Rockstage.js by Layzie
+title: Rockstage.js
 ---
 
 # Rockstage.js
