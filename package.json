@@ -2,7 +2,7 @@
   "author" : "Layzie",
   "name" : "rockstage.js",
   "description" : "The JavaScript library for using 'localStorage' & 'sessionStorage' more easy",
-  "version" : "0.0.1",
+  "version" : "0.0.3",
   "scripts" : {
     "test" : "node_modules/.bin/buster-test"
   },
