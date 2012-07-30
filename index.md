@@ -14,6 +14,10 @@ This script use no library yet. So add script tags in html when using it.
 
 `<script src="/your/path/rockstage.js" type="text/javascrpt" charset="utf-8"></script>`
 
+Or you want to minified file then add below.
+
+`<script src="/your/path/rockstage.min.js" type="text/javascrpt" charset="utf-8"></script>`
+
 ### Set items to storage
 
 `RS.put(object, flag)`
