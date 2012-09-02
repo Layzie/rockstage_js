@@ -42,5 +42,10 @@ buster.testCase('RockstageTest', {
     assert.isTrue(RS.is('bar'));
     assert.isTrue(RS.is('baz'));
     assert.isFalse(RS.is('storage'));
+  },
+  'length should be returned object\'s length in storage': function() {
+    RS.put({foo: 'hoge', bar: 'fuga', baz: 'hogera'});
+
+    assert.equals(3, RS.length());
   }
 });
