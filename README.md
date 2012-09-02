@@ -120,10 +120,10 @@ RS.length(true) // Return the length of localStorage.
 
 This library tests below browsers.
 
-- Chrome 20.0.1132.47, OS X 10.7 (Lion)
-- Safari 5.1.7, OS X 10.7 (Lion)
-- Firefox 12.0, OS X 10.7 (Lion)
-- Opera 12.00, OS X 10.7 (Lion)
+- Chrome 21.0.1180.89, OS X 10.7 (Lion)
+- Safari 6.0, OS X 10.7 (Lion)
+- Firefox 15.0, OS X 10.7 (Lion)
+- Opera 12.01, OS X 10.7 (Lion)
 
 Maybe other browser can be used. But I don't test these browsers.
 
