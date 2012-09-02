@@ -102,6 +102,20 @@ ex:
 RS.is('hoge', true) // Check 'hoge' in localStorage
 ```
 
+### Check length of items from storage
+
+`RS.length(flag)`
+- `flag` is flag to selecting `localStorage` or `sessionStorage`.
+
+Use this method to know the length of storage.
+
+This argument default value is `true`. This is `localStorage`. Set to `false` when using
+`sessionStorage`.
+
+ex:
+```javascript
+RS.length(true) // Return the length of localStorage.
+```
 ## Test enviroments
 
 This library tests below browsers.
