@@ -14,8 +14,10 @@ module.exports = function(grunt) {
     lint: {
       files: ['grunt.js', 'lib/**/*.js', '*.js']
     },
-    qunit: {
-      files: ['test/**/*.html']
+    buster: {
+      test: {
+        config: './test/buster.js'
+      }
     },
     concat: {
       dist: {
@@ -31,7 +33,7 @@ module.exports = function(grunt) {
     },
     watch: {
       files: '<config:lint.files>',
-      tasks: 'lint qunit'
+      tasks: 'buster'
     },
     jshint: {
       options: {
@@ -56,6 +58,11 @@ module.exports = function(grunt) {
   });
 
   // Default task.
-  grunt.registerTask('default', 'lint qunit concat min');
+  grunt.registerTask('default', 'concat min');
 
+  // Develop task.
+  grunt.registerTask('develop', 'buster');
+
+  // load grunt-buster
+  grunt.loadNpmTasks('grunt-buster');
 };
