@@ -30,7 +30,7 @@ buster.testCase('RockstageStorageTest', {
     refute.equals(null, RS.remove('bar', true));
     refute.equals(null, RS.remove('bar'));
   },
-  'RS.clear() should be chosen localStorage by 2nd argument is true or undefined': function() {
+  'RS.clear() should be chosen localStorage by argument is true or undefined': function() {
     var lStorage = localStorage.setItem('foo', JSON.stringify('hoge'));
     var sStorage = sessionStorage.setItem('bar', JSON.stringify('fuga'));
 
@@ -68,7 +68,7 @@ buster.testCase('RockstageStorageTest', {
     assert.equals(undefined, RS.remove('bar', false));
     refute.equals(null, RS.remove('foo', false));
   },
-  'RS.clear() should be chosen localStorage by 2nd argument is true or undefined': function() {
+  'RS.clear() should be chosen localStorage by argument is true or undefined': function() {
     var lStorage = localStorage.setItem('foo', JSON.stringify('hoge'));
     var sStorage = sessionStorage.setItem('bar', JSON.stringify('fuga'));
 
