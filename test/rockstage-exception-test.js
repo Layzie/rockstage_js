@@ -25,7 +25,7 @@ buster.testCase('RockstageExceptionTest', {
     try {
       RS.clear(function() {});
     } catch(e) {
-      assert.same(e.message, 'RS.clear(): 2nd argument should be boolean');
+      assert.same(e.message, 'RS.clear(): argument should be boolean');
     }
   },
   'RS should be called when browser have storage': function() {
