@@ -7,10 +7,10 @@
     "test": "node_modules/.bin/buster-test"
   },
   "dependencies": {
-    "buster": "~0.6"
+    "buster": "~0.6.3"
   },
   "devDependencies": {
-    "buster": "~0.6",
+    "buster": "~0.6.3",
     "grunt": "~0.3.17",
     "grunt-buster": "~0.1.2"
   },
