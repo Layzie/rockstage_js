@@ -7,9 +7,14 @@ This library for easier using 'localStorage' &amp; 'sessionStorage'.
 See http://layzie.github.com/rockstage_js
 
 ## General usage
+
 This script use no library yet. So add script tags in html when using it.
 
 `<script src="/your/path/rockstage.js" type="text/javascrpt" charset="utf-8"></script>`
+
+Or you want to minified file then add below.
+
+`<script src="/your/path/rockstage.min.js" type="text/javascrpt" charset="utf-8"></script>`
 
 ### Set items to storage
 
@@ -97,14 +102,28 @@ ex:
 RS.is('hoge', true) // Check 'hoge' in localStorage
 ```
 
+### Check length of items from storage
+
+`RS.length(flag)`
+- `flag` is flag to selecting `localStorage` or `sessionStorage`.
+
+Use this method to know the length of storage.
+
+This argument default value is `true`. This is `localStorage`. Set to `false` when using
+`sessionStorage`.
+
+ex:
+```javascript
+RS.length(true) // Return the length of localStorage.
+```
 ## Test enviroments
 
 This library tests below browsers.
 
-- Chrome 20.0.1132.47, OS X 10.7 (Lion)
-- Safari 5.1.7, OS X 10.7 (Lion)
-- Firefox 12.0, OS X 10.7 (Lion)
-- Opera 12.00, OS X 10.7 (Lion)
+- Chrome 21.0.1180.89, OS X 10.7 (Lion)
+- Safari 6.0, OS X 10.7 (Lion)
+- Firefox 15.0, OS X 10.7 (Lion)
+- Opera 12.01, OS X 10.7 (Lion)
 
 Maybe other browser can be used. But I don't test these browsers.
 

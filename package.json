@@ -1,15 +1,40 @@
 {
-  "author" : "Layzie",
-  "name" : "rockstage.js",
-  "description" : "The JavaScript library for using 'localStorage' & 'sessionStorage' more easy",
-  "version" : "0.0.3.6",
-  "scripts" : {
-    "test" : "node_modules/.bin/buster-test"
+  "author": "Layzie",
+  "name": "rockstage",
+  "description": "The JavaScript library for using 'localStorage' & 'sessionStorage' more easy",
+  "version" : "0.0.4",
+  "scripts": {
+    "test": "node_modules/.bin/buster-test"
   },
-  "dependencies" : {
-    "buster" : "~0.6"
+  "dependencies": {
+    "buster": "~0.6.3"
   },
-  "engines" : {
-    "node" : "~0.8"
-  }
+  "devDependencies": {
+    "buster": "~0.6.3",
+    "grunt": "~0.3.17",
+    "grunt-buster": "~0.1.2"
+  },
+  "engines": {
+    "node": "~0.8"
+  },
+  "main": "./lib/rockstage.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Layzie/rockstage_js.git"
+  },
+  "keywords": [
+    "Localstorage",
+    "html5",
+    "javascript"
+  ],
+  "homepage": "http://layzie.github.com/rockstage_js",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/Layzie/rockstage_js/blob/master/LICENCE"
+    }
+  ]
 }
