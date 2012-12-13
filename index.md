@@ -35,13 +35,11 @@ One is object set to storage. Last is chose `localStorage` or `sessionStorage` f
 
 ex:
 {% highlight javascript %}
-```javascript
 RS.put({
   foo: 'hoge',
   bar: 'fuga',
   baz: 'hogera'
 }, true);
-```
 {% endhighlight %}
 
 ### Get item from storage
@@ -58,9 +56,7 @@ One is string get to storage. Last is chose `localStorage` or `sessionStorage` f
 
 ex:
 {% highlight javascript %}
-```javascript
 RS.get('foo', true); // return 'hoge'
-```
 {% endhighlight %}
 
 ### Remove item from storage
@@ -77,9 +73,7 @@ One is string remove from storage. Last is chose `localStorage` or `sessionStora
 
 ex:
 {% highlight javascript %}
-```javascript
 RS.remove('foo', true); // remove 'foo' from localStorage
-```
 {% endhighlight %}
 
 ### Clear all items from storage
@@ -95,9 +89,7 @@ This argument default value is `true`. This is `localStorage`. Set to `false` wh
 
 ex:
 {% highlight javascript %}
-```javascript
 RS.clear(true) // Clear all items from localStorage
-```
 {% endhighlight %}
 
 ### Check existence of items from storage
@@ -114,9 +106,7 @@ This argument default value is `true`. This is `localStorage`. Set to `false` wh
 
 ex:
 {% highlight javascript %}
-```javascript
 RS.is('hoge', true) // Check 'hoge' in localStorage
-```
 {% endhighlight %}
 
 ### Check length of items from storage
@@ -131,9 +121,7 @@ This argument default value is `true`. This is `localStorage`. Set to `false` wh
 
 ex:
 {% highlight javascript %}
-```javascript
 RS.length(true) // Return the length of localStorage.
-```
 {% endhighlight %}
 
 ## Test enviroments
