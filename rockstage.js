@@ -1,84 +1,9 @@
-// Copyright (c) 2012 HIRAKI Satoru, https://github.com/Layzie
-// 
-// Permission is hereby granted, free of charge, to any person obtaining
-// a copy of this software and associated documentation files (the
-// "Software"), to deal in the Software without restriction, including
-// without limitation the rights to use, copy, modify, merge, publish,
-// distribute, sublicense, and/or sell copies of the Software, and to
-// permit persons to whom the Software is furnished to do so, subject to
-// the following conditions:
-// 
-// The above copyright notice and this permission notice shall be
-// included in all copies or substantial portions of the Software.
-// 
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-// NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
-// LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
-// OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
-// WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-/**
- * @fileOverView The library of 'localStorage' and 'sessionStorage'
- * @author HIRAKI Satoru@Layzie
- * @version 0.0.3.6
- */
+/*! rockstage - v0.0.4 - 2012-12-14
+* http://layzie.github.com/rockstage_js
+* Copyright (c) 2012 ; Licensed MIT */
 
 (function(window, undefined) {
   'use strict';
-
-  /**
-   * This function is called when 'RS' will be loaded. Then check the storageprivate
-   * and set 'RS' name space in 'window'. (This is private)
-   * @private
-   * @return {Void} Return nothing
-   */
-  (function _init() {
-    if (window.localStorage && window.sessionStorage) {
-      if (_checkArgument('Undefined', window.RS)) {
-        window.RS = {};
-      }
-
-      /**
-       * @namespace RS This library's namespace is 'RS'
-       */
-      window.RS = {
-        put: put,
-        get: get,
-        remove: remove,
-        clear: clear,
-        is: is
-      };
-    } else {
-      /**
-       * @throws {Error} If a browser have no storage.
-       */
-      throw new Error('RS: This browser have no storage.');
-    }
-  })();
-
-  /**
-   * This function is select the storage. True or undefined is
-   * 'localStorage', false is 'sessionStorage'. (This is private)
-   * @private
-   * @param {Boolean} flag Boolean which the storage you want to use. Default is 'true'.
-   * @param {String} fun String which want to retun error.
-   * @return {Object} Return localStorage or sessionStorage.
-   */
-  function _selectStorage(flag, fun) {
-    var storage;
-
-    if (_checkArgument('Boolean', flag) || flag === undefined) {
-      return storage = (flag === true || flag === undefined) ? localStorage : sessionStorage;
-    } else {
-      /**
-       * @throws {Error} If second argument isn't boolean.
-       */
-      throw new Error('RS.' + fun + ': 2nd argument should be boolean');
-    }
-  }
-
   /**
    * This function check the type. (This is private)
    * @private
@@ -90,6 +15,30 @@
     var object = Object.prototype.toString.call(argument).slice(8, -1);
 
     return argument !== undefined && argument !== null && object === type;
+  }
+
+  /**
+   * This function is select the storage. True or undefined is
+   * 'localStorage', false is 'sessionStorage'. (This is private)
+   * @private
+   * @param {Boolean} flag Boolean which the storage you want to use. Default is 'true'.
+   * @param {String} fun String which want to retun error.
+   * @return {Object} Return localStorage or sessionStorage.
+   */
+  function _selectStorage(flag, fun) {
+    var order = (fun !== 'clear()') ? '2nd ' : '',
+        storage;
+
+    if (_checkArgument('Boolean', flag) || flag === undefined) {
+      storage = (flag === true || flag === undefined) ? localStorage : sessionStorage;
+
+      return storage;
+    } else {
+      /**
+       * @throws {Error} If second argument(only argyment in RS.clear()) isn't boolean.
+       */
+      throw new Error('RS.' + fun + ': ' + order + 'argument should be boolean');
+    }
   }
 
   /**
@@ -202,5 +151,49 @@
       throw new Error('RS.is(): 1st argument should be strings');
     }
   }
-})(this);
+
+  /**
+   * You can check existance of a object in the storage.
+   * @param {Boolean} flag Boolean which the storage you want to use. Default is 'true'.
+   * @return {Number} Return object's length in storage
+   * @example When you'll check object's length in localStorage.
+   * RS.length();
+   */
+  function length(flag) {
+    var storage = _selectStorage(flag, 'length()');
+
+    return storage.length;
+  }
+
+  /**
+   * This function is called when 'RS' will be loaded. Then check the storageprivate
+   * and set 'RS' name space in 'window'. (This is private)
+   * @private
+   * @return {Void} Return nothing
+   */
+  (function _init() {
+    if (window.localStorage && window.sessionStorage) {
+      if (_checkArgument('Undefined', window.RS)) {
+        window.RS = {};
+      }
+
+      /**
+       * @namespace RS This library's namespace is 'RS'
+       */
+      window.RS = {
+        put: put,
+        get: get,
+        remove: remove,
+        clear: clear,
+        is: is,
+        length: length
+      };
+    } else {
+      /**
+       * @throws {Error} If a browser have no storage.
+       */
+      throw new Error('RS: This browser have no storage.');
+    }
+  }());
+}(this));
 
