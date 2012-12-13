@@ -1,6 +1,6 @@
-/*! rockstage - v0.0.4 - 2012-12-14
+/*! rockstage.js - v0.0.5 - 2012-12-14
 * http://layzie.github.com/rockstage_js
-* Copyright (c) 2012 ; Licensed MIT */
+* Copyright (c) 2012 HIRAKI Satoru; Licensed MIT */
 
 (function(window, undefined) {
   'use strict';
