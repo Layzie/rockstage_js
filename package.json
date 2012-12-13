@@ -1,8 +1,12 @@
 {
-  "author": "Layzie",
+  "author": {
+    "name": "HIRAKI Satoru",
+    "email": "saruko313@gmail.com",
+    "url": "http://layzie.hatenablog.com/"
+  },
   "name": "rockstage",
   "description": "The JavaScript library for using 'localStorage' & 'sessionStorage' more easy",
-  "version" : "0.0.4",
+  "version" : "0.0.5",
   "scripts": {
     "test": "node_modules/.bin/buster-test"
   },
