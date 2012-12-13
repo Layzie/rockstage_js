@@ -9,7 +9,10 @@ title: Rockstage.js
 
 This library for easier using 'localStorage' &amp; 'sessionStorage'.
 
+See http://layzie.github.com/rockstage_js
+
 ## General usage
+
 This script use no library yet. So add script tags in html when using it.
 
 `<script src="/your/path/rockstage.js" type="text/javascrpt" charset="utf-8"></script>`
@@ -21,7 +24,6 @@ Or you want to minified file then add below.
 ### Set items to storage
 
 `RS.put(object, flag)`
-
 - `object` is value of setting to storage.
 - `flag` is flag to selecting `localStorage` or `sessionStorage`.
 
@@ -32,18 +34,16 @@ One is object set to storage. Last is chose `localStorage` or `sessionStorage` f
 `sessionStorage`.
 
 ex:
-{% highlight javascript %}
+```javascript
 RS.put({
   foo: 'hoge',
   bar: 'fuga',
   baz: 'hogera'
 }, true);
-{% endhighlight %}
-
+```
 ### Get item from storage
 
 `RS.get('value', flag)`
-
 - `value` is string of want to get storage.
 - `flag` is flag to selecting `localStorage` or `sessionStorage`.
 
@@ -54,14 +54,12 @@ One is string get to storage. Last is chose `localStorage` or `sessionStorage` f
 `sessionStorage`.
 
 ex:
-{% highlight javascript %}
+```javascript
 RS.get('foo', true); // return 'hoge'
-{% endhighlight %}
-
+```
 ### Remove item from storage
 
 `RS.remove('value', flag)`
-
 - `value` is string of want to remove storage.
 - `flag` is flag to selecting `localStorage` or `sessionStorage`.
 
@@ -72,14 +70,13 @@ One is string remove from storage. Last is chose `localStorage` or `sessionStora
 `sessionStorage`.
 
 ex:
-{% highlight javascript %}
+```javascript
 RS.remove('foo', true); // remove 'foo' from localStorage
-{% endhighlight %}
+```
 
 ### Clear all items from storage
 
 `RS.clear(flag)`
-
 - `flag` is flag to selecting `localStorage` or `sessionStorage`.
 
 When clear all items from storage using `RS.flag()`. This method arguments is only 1.
@@ -89,14 +86,13 @@ This argument default value is `true`. This is `localStorage`. Set to `false` wh
 `sessionStorage`.
 
 ex:
-{% highlight javascript %}
+```javascript
 RS.clear(true) // Clear all items from localStorage
-{% endhighlight %}
+```
 
 ### Check existence of items from storage
 
 `RS.is(key, flag)`
-
 - `key` is keyword of want to check in `localStorage` or `sessionStorage`.
 - `flag` is flag to selecting `localStorage` or `sessionStorage`.
 
@@ -107,18 +103,32 @@ This argument default value is `true`. This is `localStorage`. Set to `false` wh
 `sessionStorage`.
 
 ex:
-{% highlight javascript %}
+```javascript
 RS.is('hoge', true) // Check 'hoge' in localStorage
-{% endhighlight %}
+```
 
+### Check length of items from storage
+
+`RS.length(flag)`
+- `flag` is flag to selecting `localStorage` or `sessionStorage`.
+
+Use this method to know the length of storage.
+
+This argument default value is `true`. This is `localStorage`. Set to `false` when using
+`sessionStorage`.
+
+ex:
+```javascript
+RS.length(true) // Return the length of localStorage.
+```
 ## Test enviroments
 
 This library tests below browsers.
 
-- Chrome 20.0.1132.47, OS X 10.7 (Lion)
-- Safari 5.1.7, OS X 10.7 (Lion)
-- Firefox 12.0, OS X 10.7 (Lion)
-- Opera 12.00, OS X 10.7 (Lion)
+- Chrome 21.0.1180.89, OS X 10.7 (Lion)
+- Safari 6.0, OS X 10.7 (Lion)
+- Firefox 15.0, OS X 10.7 (Lion)
+- Opera 12.01, OS X 10.7 (Lion)
 
 Maybe other browser can be used. But I don't test these browsers.
 
@@ -148,3 +158,5 @@ NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
 LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
 OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
