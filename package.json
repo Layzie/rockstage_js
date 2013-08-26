@@ -6,17 +6,21 @@
   },
   "name": "rockstage",
   "description": "The JavaScript library for using 'localStorage' & 'sessionStorage' more easy",
-  "version" : "0.0.5",
+  "version": "0.0.5",
   "scripts": {
     "test": "node_modules/.bin/buster-test"
   },
   "dependencies": {
-    "buster": "~0.6.3"
+    "buster": "~0.6.12"
   },
   "devDependencies": {
-    "buster": "~0.6.3",
-    "grunt": "~0.3.17",
-    "grunt-buster": "~0.1.2"
+    "buster": "~0.6.12",
+    "grunt": "~0.4.1",
+    "grunt-buster": "~0.2.1",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-jshint": "~0.6.3",
+    "grunt-contrib-uglify": "~0.2.2",
+    "grunt-contrib-watch": "~0.5.3"
   },
   "engines": {
     "node": "~0.8"
