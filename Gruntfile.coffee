@@ -40,7 +40,6 @@ module.exports = (grunt) ->
         boss: true
         eqnull: true
         browser: true
-
       globals:
         browser: true
         devel: true
@@ -54,10 +53,10 @@ module.exports = (grunt) ->
 
 
   # Default task.
-  grunt.registerTask 'default', ['concat', 'uglify']
+  grunt.registerTask 'default', ['jshint', 'concat', 'uglify']
 
   # Develop task.
-  grunt.registerTask 'develop', ['buster']
+  grunt.registerTask 'develop', ['jshint', 'buster']
 
   # load grunt-buster
   grunt.loadNpmTasks 'grunt-contrib-concat'
